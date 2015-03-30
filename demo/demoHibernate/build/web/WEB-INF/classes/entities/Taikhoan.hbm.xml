@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 6, 2014 3:40:16 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="entities.Taikhoan" table="TAIKHOAN" schema="HR">
+        <id name="username" type="string">
+            <column name="USERNAME" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="40" />
+        </property>
+        <property name="hoten" type="string">
+            <column name="HOTEN" length="60" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="60" />
+        </property>
+        <property name="dienthoai" type="big_decimal">
+            <column name="DIENTHOAI" precision="22" scale="0" />
+        </property>
+        <property name="congty" type="string">
+            <column name="CONGTY" length="60" />
+        </property>
+        <property name="diachi" type="string">
+            <column name="DIACHI" length="60" />
+        </property>
+        <set name="hoadons" table="HOADON" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="USERNAME" length="20" />
+            </key>
+            <one-to-many class="entities.Hoadon" />
+        </set>
+    </class>
+</hibernate-mapping>

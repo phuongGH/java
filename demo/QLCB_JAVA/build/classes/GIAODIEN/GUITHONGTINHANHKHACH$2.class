@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scintilla xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<keyword-classes>
+		<keyword-class name="python-primary-keywords">
+			and assert break class continue def del elif
+			else except exec finally for from global if import in is lambda None
+			not or pass print raise return try while yield
+			__abs__ __add__ __and__ __bases__ __builtin__ __call__ __class__ __cmp__
+			__coerce__ __complex__ __concat__ __contains__ __del__ __delattr__ __delitem__
+			__delslice__ __dict__ __div__ __divmod__ __doc__ __eq__ __file__ __float__
+			__floordiv__ __future__ __ge__ __getattr__ __getitem__ __getslice__ __gt__
+			__hash__ __hex__ __iadd__ __iand__ __idiv__ __ilshift__ __imod__ __import__
+			__imul__ __init__ __int__ __inv__ __invert__ __ior__ __ipow__ __irshift__
+			__isub__ __iter__ __ixor__ __le__ __len__ __long__ __lshift__ __lt__ __main__
+			__members__ __methods__ __mod__ __module__ __mul__ __name__ __ne__ __neg__
+			__nonzero__ __not__ __oct__ __

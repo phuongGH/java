@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 10, 2014 9:41:16 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="entities.Hoadon" table="HOADON" schema="HR">
+        <id name="mahoadon" type="int">
+            <column name="MAHOADON" precision="6" scale="0" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="taikhoan" class="entities.Taikhoan" fetch="select">
+            <column name="USERNAME" length="20" />
+        </many-to-one>
+        <property name="tenhoadon" type="string">
+            <column name="TENHOADON" length="60" />
+        </property>
+        <property name="ngaylap" type="date">
+            <column name="NGAYLAP" length="7" />
+        </property>
+        <property name="tinhtrang" type="string">
+            <column name="TINHTRANG" length="20" />
+        </property>
+        <property name="hinhthucthanhtoan" type="string">
+            <column name="HINHTHUCTHANHTOAN" length="20" />
+        </property>
+        <set name="chitiethoadons" table="CHITIETHOADON" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="MAHOADON" precision="6" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="entities.Chitiethoadon" />
+        </set>
+    </class>
+</hibernate-mapping>

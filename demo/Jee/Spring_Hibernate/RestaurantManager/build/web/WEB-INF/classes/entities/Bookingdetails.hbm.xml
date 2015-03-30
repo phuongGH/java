@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2014 10:45:27 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="entities.Bookingdetails" table="bookingdetails" catalog="restaurant_db">
+        <id name="bookingId" type="java.lang.Integer">
+            <column name="Booking_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tableT" class="entities.TableT" fetch="select">
+            <column name="Table_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="customer" class="entities.Customer" fetch="select">
+            <column name="Customer_ID" not-null="true" />
+        </many-to-one>
+        <property name="dayBooking" type="date">
+            <column name="Day_Booking" length="10" not-null="true" />
+        </property>
+        <property name="dayStart" type="int">
+            <column name="DayStart" not-null="true" />
+        </property>
+        <property name="timeStart" type="timestamp">
+            <column name="TimeStart" length="19" not-null="true" />
+        </property>
+        <property name="numPerson" type="int">
+            <column name="NumPerson" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

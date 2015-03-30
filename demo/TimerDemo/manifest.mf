@@ -1,0 +1,3 @@
+package $(PackageName)$(CSLB){
+	import flash.display.Sprite;
+	import flash.events.E

@@ -1,0 +1,6 @@
+﻿package fl.transitions
+{
+	import flash.events.Event;
+
+	/**
+	 * The TweenEvent 

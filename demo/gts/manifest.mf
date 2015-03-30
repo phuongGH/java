@@ -1,0 +1,4 @@
+﻿package fl.video
+{
+	/**
+	 * The VideoAlign class provides constant values to use

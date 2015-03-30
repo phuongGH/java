@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:link value="them tai nhom tai khoan" outcome="themnhomtaikhoan"></h:link>
+            <br/>
+            <h:dataTable var="tk" value="#{nhomTKManagedBean.nhomtaikhoan()}" border="1">
+                <h:column>
+                    <f:facet name="header">Ma Nhom</f:facet>
+                        #{tk.idNhom}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Ten Nhom</f:facet>
+                        #{tk.tenNhom}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Mo Ta Nhom</f:facet>
+                        #{tk.moTa}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Tuy Chon</f:facet>
+                    <h:commandLink value="xoa" action="#{nhomTKManagedBean.xoa(tk)}" onclick="return confirm('ban co chac xoa?')"></h:commandLink>
+                </h:column>
+                 <h:column>
+                    <f:facet name="header">Tuy Chon</f:facet>
+                    <h:commandLink value="sua" action="#{nhomTKManagedBean.thongtinnhom(tk)}" ></h:commandLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,3 @@
+/**
+* Definition of Flex compiler built-in tag
+* For code completion purpose only

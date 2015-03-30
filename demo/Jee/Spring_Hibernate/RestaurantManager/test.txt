@@ -1,0 +1,32 @@
+Programing website reserver table lunch in hotel ABC
+language program: jsp
+target: Programing Dynamic Website
+Database: MySQL
+Description:
+	First Page: Reservation insert page (insert, update, delete, Select table lunch).
+	Second Page: Reservation Board.
+	Third Page: Reservation Status page.
+Note: insert at least 10 data into your database. Using Textbox, Datetime, Combobox, List for
+Management.
+Make/ use to StoredProcedure
+Make document to db Schema and Query
+Duration: 1 day
+
+
+Lập trình website bảng-dự trữ ăn ​​trưa tại khách sạn ABC 
+	chương trình ngôn ngữ: 
+		jsp 
+	mục tiêu: 
+		Lập trình Dynamic Website 
+	Cơ sở dữ liệu: 
+		MySQL 
+	Mô tả: 
+*		Trang đầu tiên: trang Đặt phòng chèn (insert, cập nhật, xóa, chọn bàn ăn trưa). 
+		Thứ hai Trang: Ban Đặt phòng. 
+		Thứ ba Trang: Trang Tình trạng Đặt phòng. 
+	Chú ý: 
+		nhập ít nhất 10 dữ liệu vào cơ sở dữ liệu của bạn. Sử dụng Textbox,
+			kiểu ngày giờ, Combobox, Danh sách cho quản lý. 
+		Thực hiện / sử dụng để StoredProcedure 
+		Làm tài liệu để db lược đồ và truy vấn 
+	Độ dài: 1 ngày

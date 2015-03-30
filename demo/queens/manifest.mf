@@ -1,0 +1,3 @@
+package 
+{
+	/// The Vector class lets you access and manipulate a vector - an array

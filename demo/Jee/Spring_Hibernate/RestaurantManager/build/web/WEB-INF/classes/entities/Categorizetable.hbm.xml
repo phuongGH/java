@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2014 10:45:27 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="entities.Categorizetable" table="categorizetable" catalog="restaurant_db">
+        <id name="categorizeTableId" type="java.lang.Integer">
+            <column name="CategorizeTable_id" />
+            <generator class="identity" />
+        </id>
+        <property name="categorizeTableName" type="string">
+            <column name="CategorizeTable_Name" />
+        </property>
+        <property name="description" type="string">
+            <column name="Description" not-null="true" />
+        </property>
+        <set name="tableTs" table="table_t" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CategorizeTable_ID" not-null="true" />
+            </key>
+            <one-to-many class="entities.TableT" />
+        </set>
+    </class>
+</hibernate-mapping>

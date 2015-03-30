@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Scintilla xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<keyword-classes>
+		<keyword-class name="sgml-and-dtd-keywords">
+			ELEMENT DOCTYPE ATTLIST ENTITY NOTATION
+		</keyword-class>
+		<keyword-class name="php-keywords">
+			and array as bool boolean break case cfunction class const continue declare default die directory do double 
+			echo else elseif empty enddeclare endfor endforeach endif endswitch endwhile eval exit extends false float 
+			for foreach function global if include include_once int integer isset list new null object old_function or 
+			parent print real require require_once resource return static stdclass string switch true unset use var while 
+			xor abstract catch clone exception final implements interface php_user_filter private protected public this
+			throw try __class__ __file__ __function__ __line__ __method__ __sleep __wakeup
+		</keyword-class>
+		<keyword-class name="javascript-keywords">
+			enum throw throws class extends try co

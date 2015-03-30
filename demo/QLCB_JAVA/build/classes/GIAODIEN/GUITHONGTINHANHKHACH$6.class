@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<scintillamenu>
+	<menu label="Label.Edit" name="EditMenu">
+		<button label="Label.CutLine" click="ScintillaCommand" tag="LineCut" />
+		<button label="Label.CopyLine" click="ScintillaCommand" tag="LineCopy" />
+		<button label="Label.DeleteLine" click="ScintillaCommand" tag="LineDelete" />
+		<button label="Label.MoveLineUp" click="ScintillaCommand" tag="MoveLineUp" />
+		<button label="Label.MoveLineDown" click="ScintillaCommand" tag="MoveLineDown" />
+		<button label="Label.TransposeLines" click="ScintillaCommand" tag="LineTranspose" />
+		<button label="Label.DuplicateSelection" click="ScintillaCommand" tag="SelectionDuplicate" />
+		<button label="Label.SortLineGroups" click="SortLineGroups" flags="Enable:Enable:HasSelection" />
+		<button label="Label.SortLines

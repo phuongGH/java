@@ -1,0 +1,326 @@
+﻿get/post(jsp) --> doget/dopost (servlet) 
+jv @WebServlet(description = "first jsp", urlPatterns = { "/hello" })
+js <form action="hello" method="post"> <!-- hello: urlPatterns class ở sever sẻ nhận dữ liệu
+
+
+//in ra web
+PrintWriter writer = response.getWriter();
+writer.println("<br>" +  "load parmeter" + method);
+
+
+
+
+
+//servlet config
+<xml>
+mỗi jsp - servlest sẽ có cặp cấu hình
+
+	<servlet>
+		<servlet-name>Hello World</servlet-name>
+		<servlet-class>demo.servlet.helloWorld</servlet-class>	 //demo.servlet.helloWorld tên class servlet
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Hello World</servlet-name>
+		<url-pattern>/hello</url-pattern>						//đường đẫn phía client có thể thấy
+	</servlet-mapping>
+
+//jsp config
+	<servlet>
+		<servlet-name>file_name_jsp</servlet-name>
+		<jsp-file>/temp/demo.jsp</jsp-file>						// có đấu "/"
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>file_name_jsp</servlet-name>
+		<url-pattern>/demo</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
+jv	
+//hiển thị view
+//request.getRequestDispatcher
+RequestDispatcher dispatcher =  request.getRequestDispatcher("show.jsp");
+	dispatcher.forward(request, response);
+//response.sendRedirect
+response.sendRedirect("login.jsp");
+
+
+
+
+
+//init parameter trong xml và lấy ra trong servlet (1 servlet có thể có nhiều init parameter )
+//parameter riên cho mỗi servlet hoặc jsp
+//xml servlet
+<servlet>
+	.
+	.
+	.
+	<init-param>
+		<param-name>song</param-name>
+		<param-value>Until You </param-value>
+	</init-param>
+</servlet>	
+//jv
+ServletConfig config = this.getServletConfig();
+String song = config.getInitParameter("song");
+
+		
+//xml jsp
+<servlet>
+	.
+	.
+	.
+	<init-param>
+		<param-name>demotest</param-name>
+    	<param-value>demo content.</param-value>
+	</init-param>
+</servlet>		
+//jsp
+demo init parameter: <%= config.getInitParameter("demotest") %>	
+		
+		
+		
+		
+	
+	
+//initialization parameter : parameter cho toàn bộ hệ thống	(nằm ngoài cùng)	
+//xml
+<context-param>
+	<param-name>connection_str</param-name>
+	<param-value>aabbcc</param-value>
+</context-param>
+//jv
+ServletContext context = this.getServletContext();
+//hoặc ServletContext context = this.getServletConfig().getServletContext();
+String scs = context.getInitParameter("connection_str");
+
+
+
+//jv
+//Attribute
+// gọi servlet imgshow, gởi dữ liệu trong request
+RequestDispatcher dispatcher =  request.getRequestDispatcher("/imgShow");
+request.setAttribute("imageName", "img1");
+dispatcher.forward(request, response);
+//lấy dữ liệu từ attribute
+//js
+<%= request.getAttribute("imageName") %>
+//jv 
+request.getAttribute("imageName");
+
+//c2 gán một đối tượng thay vì gán 1 string
+//jv tạo một class trong models tên Image
+Image img = new Image("img1", 350, 350);
+request.setAttribute("imageName", img);
+//gọi ra từ jsp
+<%@ page import="demo.models.Image" %>
+<%= ((Image)request.getAttribute("imageName")).get_name() %>
+
+
+//jv
+//session
+//set
+HttpSession session = request.getSession();
+session.setAttribute("username", sUserName);
+//get
+HttpSession session = request.getSession();
+String userName = (String)session.getAttribute("username");
+//jv vô hiệu session có hiệu lực ngay lập tức
+session.invalidate();
+//xml có hiệu lực sau 15 phút 
+<session-config>
+  		<session-timeout>15</session-timeout>
+</session-config>
+//jv vô hiệu hóa session trong 900s (set ngay lần đầu tiên gán session)
+session.setMaxInactiveInterval(900);
+//jv sự kiện khi một session được thêm vào hoặc out
+public class Image implements HttpSessionBindingListener
+{
+	@Override
+	public void valueBound(HttpSessionBindingEvent e) {
+		
+		e.getSession().getServletContext().log("image in session " + get_name()); // ghi log
+	}
+	@Override
+	public void valueUnbound(HttpSessionBindingEvent e) {
+		
+		e.getSession().getServletContext().log("image out session");
+	}
+}
+//jv sự kiện tạo mới hoặc hủy session
+public class newListener implements HttpSessionListener{
+
+	@Override
+	public void sessionCreated(HttpSessionEvent e) {
+		
+		e.getSession().getServletContext().log("new session ");
+	}
+
+	@Override
+	public void sessionDestroyed(HttpSessionEvent e) {
+		
+		e.getSession().getServletContext().log("Destroy session " );
+	}
+}
+//xml thông báo cho hệ thống class lắng nghe sự kiện.
+<listener>
+  	<listener-class>demo.listeners.newListener</listener-class>
+</listener>
+
+
+
+
+
+
+//cookie
+//jv xem cookie
+for(Cookie c: request.getCookies())
+{
+	System.out.println(c.getName());
+	System.out.println(c.getValue());
+	System.out.println();
+}
+//jv thêm mới cookie
+Cookie cokie = new Cookie("loation", "Viet Nam");
+response.addCookie(cokie);
+
+
+
+
+//pageContext
+//jv (có thể trùng tên gữa các vùng khác nhau. thứ tự tiềm kiếm pagecontext -> request -> session -> application)
+this.getServletContext().setAttribute("scope1", "scope application");
+session.setAttribute("scope2", "scope session");
+request.setAttribute("scope1", "scope request");
+//jsp
+<% pageContext.setAttribute("scope", "Page context"); %>
+Scope of the attribute : <%= pageContext.getAttribute("scope") %>
+Scope of the attribute : <%= pageContext.findAttribute("scope1") %>
+Scope of the attribute : <%= pageContext.getAttribute("scope1", pageContext.APPLICATION_SCOPE) %> // lấy scope theo vùng
+
+
+
+//Expression Language
+//jsp
+<%= pageContext.getAttribute("scope") %>
+=
+${pageScope.scope }
+=
+${pageScope["scope"] }
+${sessionScope.scope }
+${ 4 + 3}
+<%@ page isELIgnored="true" %> //không sử dụng Expression Language
+//xml không sử dụng Expression Language cho tất cả file jsp.
+<jsp-config>
+  	<jsp-property-group>
+  		<url-pattern>*.jsp</url-pattern>
+  		<el-ignored>true</el-ignored>
+  	</jsp-property-group>
+</jsp-config>
+
+//tạo 1 class student với thuộc tính String name
+//jv
+request.setAttribute("student", new student("student name"));
+//jsp
+${requestScope.student.name }
+//--------------
+parameter : <%= application.getInitParameter("connection_str") %>
+=
+parameter 2 : ${initParam.connection_str }
+
+// student.jsp
+<form action="detail.jsp" method="get">
+	<input type="text" name="txtname"/>
+	<select name="region">
+			<option value="asian"> Asian </option>
+			<option value="america"> America </option>
+			<option value="europe"> Europe </option>
+			<option value="africa"> Africa </option>
+	</select>
+	<input type="submit" value="ok" />
+</form>
+//detail.jsp
+student name: ${param.txtname }
+Region: ${param.region }
+
+<jsp:useBean id="student" class="demo.models.student" >
+	<jsp:setProperty property="name" name="student" param="txtname"/>
+</jsp:useBean> 
+infor: <jsp:getProperty property="name" name="student"/> 
+
+//jv
+java.util.List<String> lang = new ArrayList<String>();
+lang.add("Java");
+lang.add("C#");
+lang.add("html");
+request.setAttribute("languages", lang);
+//jsp
+ ${requestScope.languages[1] }
+
+
+ 
+ 
+//useBean
+// class student (co ham khoi tao se bi lo chua ro nguyen do)
+package demo.models;
+public class student {
+	private String name;
+	/*public student(String name) {
+		super();
+		this.name = name;
+	}
+*/	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}	
+}
+// setAttribute for request
+student student =  new student();
+student.setName("aaaaaaaaaaaaaaaa");
+request.setAttribute("student",student);
+//jsp person là cha student (kế thừa)
+<jsp:useBean id="student" type="demo.models.person" class="demo.models.student" scope="request"></jsp:useBean> 
+infor: <jsp:getProperty property="name" name="student"/> 
+// nếu tìm trong request không có id student thì useBean tự tạo student mới rồi gán giá trị 
+// thẻ trog <jsp:useBean> </jsp:useBean>
+<jsp:useBean id="student" class="demo.models.student" scope="request">
+	<jsp:setProperty property="name" name="student" value="bbbbbb"/>
+</jsp:useBean> 
+//setProperty để ngoài useBean sẽ gán giá trị nếu student tồn tại.
+<jsp:setProperty property="name" name="student" value="bbbbbb"/>
+ 
+ 
+ 
+ //include jsp
+ <%@ include file="/common/header.jsp" %> 				// biên dịch từ trước
+ <jsp:include page="/common/header.jsp"></jsp:include>	// tại thời điểm chạy sẽ biên dịch
+ 
+ <jsp:include page="/common/header.jsp">
+		<jsp:param value="aaaaa" name="param1"/>
+</jsp:include>
+ //lấy ra
+ ${ param.param1}
+ 
+<%! String name = "aaaaa"; %>
+<jsp:include page="/common/header.jsp">
+	<jsp:param value="<%= name %>" name="param1"/>
+</jsp:include> 
+ 
+ 
+ 
+//Directive
+<%@ page .... %>
+<%@ inclue ... %>	// thêm những file dùng chung(header, fooder)
+<%@ taglib ... %>
+
+
+
+//pagecontext < request < session < application
+
+//Attribute  request, session.

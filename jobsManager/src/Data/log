@@ -1,0 +1,128 @@
+
+23/02/2015 09:25:02 --> ***************  System running *************
+23/02/2015 09:25:02 --> Load variable develop true
+23/02/2015 09:25:02 --> reset DB
+23/02/2015 09:25:02 --> getUserID
+23/02/2015 09:25:02 --> Write user DL.User@df9f5f
+23/02/2015 09:25:02 --> write Job DL.Job@1469ea2
+23/02/2015 09:25:02 --> write Job DL.Job@7aac27
+23/02/2015 09:25:02 --> write Job DL.Job@e253f1
+23/02/2015 09:25:02 --> constructor UserManager
+23/02/2015 09:25:02 --> -UserManager- getUser 
+23/02/2015 09:25:02 --> read user DL.User@9e54c2
+23/02/2015 09:25:02 --> Write group DL.JobGroup@1ab7765
+23/02/2015 09:25:02 --> Write group DL.JobGroup@ec7777
+23/02/2015 09:25:02 --> Write group DL.JobGroup@107d329
+23/02/2015 09:25:02 --> nomalLoad...........
+23/02/2015 09:25:02 --> -UserManager- getUser 
+23/02/2015 09:25:02 --> read user DL.User@1629346
+23/02/2015 09:25:02 --> Read Job DL.Job@4b9385
+23/02/2015 09:25:02 --> Read Job DL.Job@1311334
+23/02/2015 09:25:02 --> Read Job DL.Job@2a0b20
+23/02/2015 09:25:02 --> -JobManager- LoadJobs
+23/02/2015 09:25:02 --> -UserManager- getUser 
+23/02/2015 09:25:02 --> read user DL.User@1075dc0
+23/02/2015 09:25:02 --> Read Job DL.JobGroup@14c265e
+23/02/2015 09:25:02 --> Read Job DL.JobGroup@8139f0
+23/02/2015 09:25:02 --> Read Job DL.JobGroup@ca494b
+23/02/2015 09:25:02 --> -JobManager- LoadGroup
+23/02/2015 09:25:02 --> constructor JobManager
+23/02/2015 09:25:03 --> -JobManager- getGroupByID 1
+23/02/2015 09:25:03 --> -JobManager- getQueueJobsInGroup 1
+23/02/2015 09:25:03 --> -JobManager- getAllJobsInGroup 1
+23/02/2015 09:25:03 --> -JobManager- getGroupByID 1
+23/02/2015 09:25:17 --> ***************  System running *************
+23/02/2015 09:25:17 --> Load variable develop true
+23/02/2015 09:25:17 --> reset DB
+23/02/2015 09:25:17 --> getUserID
+23/02/2015 09:25:17 --> Write user DL.User@df9f5f
+23/02/2015 09:25:17 --> write Job DL.Job@1469ea2
+23/02/2015 09:25:17 --> write Job DL.Job@7aac27
+23/02/2015 09:25:17 --> write Job DL.Job@e253f1
+23/02/2015 09:25:17 --> constructor UserManager
+23/02/2015 09:25:17 --> -UserManager- getUser 
+23/02/2015 09:25:17 --> read user DL.User@9e54c2
+23/02/2015 09:25:17 --> Write group DL.JobGroup@1ab7765
+23/02/2015 09:25:17 --> Write group DL.JobGroup@ec7777
+23/02/2015 09:25:17 --> Write group DL.JobGroup@107d329
+23/02/2015 09:25:17 --> nomalLoad...........
+23/02/2015 09:25:17 --> -UserManager- getUser 
+23/02/2015 09:25:17 --> read user DL.User@1629346
+23/02/2015 09:25:17 --> Read Job DL.Job@4b9385
+23/02/2015 09:25:17 --> Read Job DL.Job@1311334
+23/02/2015 09:25:17 --> Read Job DL.Job@2a0b20
+23/02/2015 09:25:17 --> -JobManager- LoadJobs
+23/02/2015 09:25:17 --> -UserManager- getUser 
+23/02/2015 09:25:17 --> read user DL.User@1075dc0
+23/02/2015 09:25:17 --> Read Job DL.JobGroup@14c265e
+23/02/2015 09:25:17 --> Read Job DL.JobGroup@8139f0
+23/02/2015 09:25:17 --> Read Job DL.JobGroup@ca494b
+23/02/2015 09:25:17 --> -JobManager- LoadGroup
+23/02/2015 09:25:17 --> constructor JobManager
+23/02/2015 09:25:17 --> -JobManager- getGroupByID 1
+23/02/2015 09:25:17 --> -JobManager- getQueueJobsInGroup 1
+23/02/2015 09:25:17 --> -JobManager- getAllJobsInGroup 1
+23/02/2015 09:25:43 --> ***************  System running *************
+23/02/2015 09:25:43 --> Load variable develop true
+23/02/2015 09:25:43 --> reset DB
+23/02/2015 09:25:43 --> getUserID
+23/02/2015 09:25:43 --> Write user DL.User@df9f5f
+23/02/2015 09:25:43 --> write Job DL.Job@1469ea2
+23/02/2015 09:25:43 --> write Job DL.Job@7aac27
+23/02/2015 09:25:43 --> write Job DL.Job@e253f1
+23/02/2015 09:25:43 --> constructor UserManager
+23/02/2015 09:25:43 --> -UserManager- getUser 
+23/02/2015 09:25:43 --> read user DL.User@9e54c2
+23/02/2015 09:25:43 --> Write group DL.JobGroup@1ab7765
+23/02/2015 09:25:43 --> Write group DL.JobGroup@ec7777
+23/02/2015 09:25:43 --> Write group DL.JobGroup@107d329
+23/02/2015 09:25:43 --> nomalLoad...........
+23/02/2015 09:25:43 --> -UserManager- getUser 
+23/02/2015 09:25:43 --> read user DL.User@1629346
+23/02/2015 09:25:43 --> Read Job DL.Job@4b9385
+23/02/2015 09:25:43 --> Read Job DL.Job@1311334
+23/02/2015 09:25:43 --> Read Job DL.Job@2a0b20
+23/02/2015 09:25:43 --> -JobManager- LoadJobs
+23/02/2015 09:25:43 --> -UserManager- getUser 
+23/02/2015 09:25:43 --> read user DL.User@1075dc0
+23/02/2015 09:25:43 --> Read Job DL.JobGroup@14c265e
+23/02/2015 09:25:43 --> Read Job DL.JobGroup@8139f0
+23/02/2015 09:25:43 --> Read Job DL.JobGroup@ca494b
+23/02/2015 09:25:43 --> -JobManager- LoadGroup
+23/02/2015 09:25:43 --> constructor JobManager
+23/02/2015 09:25:44 --> -JobManager- getGroupByID 1
+23/02/2015 09:25:44 --> -JobManager- getQueueJobsInGroup 1
+23/02/2015 09:25:44 --> -JobManager- getAllJobsInGroup 1
+23/02/2015 09:25:44 --> -JobManager- getGroupByID 1
+23/02/2015 09:28:18 --> ***************  System running *************
+23/02/2015 09:28:18 --> Load variable develop true
+23/02/2015 09:28:18 --> reset DB
+23/02/2015 09:28:18 --> getUserID
+23/02/2015 09:28:18 --> Write user DL.User@df9f5f
+23/02/2015 09:28:18 --> write Job DL.Job@1469ea2
+23/02/2015 09:28:18 --> write Job DL.Job@7aac27
+23/02/2015 09:28:18 --> write Job DL.Job@e253f1
+23/02/2015 09:28:18 --> constructor UserManager
+23/02/2015 09:28:18 --> -UserManager- getUser 
+23/02/2015 09:28:18 --> read user DL.User@9e54c2
+23/02/2015 09:28:18 --> Write group DL.JobGroup@1ab7765
+23/02/2015 09:28:18 --> Write group DL.JobGroup@ec7777
+23/02/2015 09:28:18 --> Write group DL.JobGroup@107d329
+23/02/2015 09:28:18 --> nomalLoad...........
+23/02/2015 09:28:18 --> -UserManager- getUser 
+23/02/2015 09:28:18 --> read user DL.User@1629346
+23/02/2015 09:28:18 --> Read Job DL.Job@4b9385
+23/02/2015 09:28:18 --> Read Job DL.Job@1311334
+23/02/2015 09:28:18 --> Read Job DL.Job@2a0b20
+23/02/2015 09:28:18 --> -JobManager- LoadJobs
+23/02/2015 09:28:18 --> -UserManager- getUser 
+23/02/2015 09:28:18 --> read user DL.User@1075dc0
+23/02/2015 09:28:18 --> Read Job DL.JobGroup@14c265e
+23/02/2015 09:28:18 --> Read Job DL.JobGroup@8139f0
+23/02/2015 09:28:18 --> Read Job DL.JobGroup@ca494b
+23/02/2015 09:28:18 --> -JobManager- LoadGroup
+23/02/2015 09:28:18 --> constructor JobManager
+23/02/2015 09:28:19 --> -JobManager- getGroupByID 1
+23/02/2015 09:28:19 --> -JobManager- getQueueJobsInGroup 1
+23/02/2015 09:28:19 --> -JobManager- getAllJobsInGroup 1
+23/02/2015 09:28:19 --> -JobManager- getGroupByID 1
